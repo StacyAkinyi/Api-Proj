@@ -11,11 +11,12 @@ class fnc{/*class: keyword that informs the program to create a class, fnc- func
      public function computer_user($fname){
         return $fname;
     }
-    public function user_age($fname, $yob){
+    public function user_age($name, $yob){
         $age=date('Y')- $yob;
-        return $age;
-
+        return $name . " is " .$age;
     }
 
-   
 }
+
+
+
