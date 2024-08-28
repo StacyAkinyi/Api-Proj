@@ -7,5 +7,10 @@ class fnc{/*class: keyword that informs the program to create a class, fnc- func
     protected $email_address;
     private $password;
 
+     //creating a method
+     public function computer_user($fname){
+        return $fname;
+    }
+
    
 }
