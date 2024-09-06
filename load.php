@@ -1,29 +1,27 @@
 <?php
+//identify pssible directories where classes could be e.g. Layouts, Menus, Contents
+function class autoload(){
+    $directories=["contents","layouts","menus"];
+    foreach($directories as $dir){
+        $filename=dirname(__FILE__). DIRECTORY_SEPARATOR. $dir.DIRECTORY_SEPARATOR . $classname . "php";
+        if(file_exists($filename) AND is_reachable($filename)){
+            require_once $filename;
+        }
+    }
+}
+spl_autoload_register('classAutoLad');
+
 
 require_once "Layoutfolder/layout.php";
 $ObjLayouts = new layout();
 
-$arr=["black", "white", "red", "blue", "green"];
+require_once "Menus/menu.php";
+$ObjMenus = new menu();
 
-foreach($arr as $color){
-    echo $color . "<br>";
-}
+require_once "Contents/headings.php";
+$ObjHeadings = new headings();
 
-print dirname(__FILE__);   //prints the directory of the file : C:\xampp\htdocs\Api-Proj
-print "<br>";
-print "<br>";
-print $_SERVER["PHP_SELF"];  //prints the server path: /Api-Proj/load.php
-print "<br>";
-print "<br>";
-print  basename($_SERVER["PHP_SELF"]);  //prints the file name: load.php
-print "<br>";
-print "<br>";
 
-if (file_exists("fnc.php") AND is_readable("fnc.php")){
-    echo "Yes, the file exists and is readable";
-}else{
-    print "The file does not exist or is not readable";
-}
 
 
 

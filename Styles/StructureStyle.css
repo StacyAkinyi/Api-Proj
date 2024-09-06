@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+}
+*{
+    box-sizing: border;
+}
+.topnav{
+    background-color: black;
+    overflow: hidden;
+}
+.topnav a{
+    color: azure;
+    float: left;
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    padding: 14px 16px;
+}
+.topnav a:hover{
+    background-color: azure;
+    color: black;
+    text-decoration: none;
+
+}
+.topnav-right{
+    float: right;
+}
+.footer{
+    background-color: black;
+    color: azure;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom:0;
+}
